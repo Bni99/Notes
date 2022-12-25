@@ -1,0 +1,39 @@
+What is Emmet ?
+
+Emmet is a free add on the text editors, With the help of emmet we can use some shortcuts which will then be expanded to the full pieces of code,This saves a lot of time of 
+developers as they have to write less code manually.
+Some examples of Emmet shortcuts : Li*4 , div>ul>li
+
+
+Difference between library and framework ? 
+
+Basically both are the reusable code written by someone else which help us to solve common problems in easier ways.Big Difference is like in a library it requires minimal
+effort to add in your code, also you are in charge of the flow of the application.Whereas in the framework , the framework is in charge of the application.
+Learning curve of libraries are less as compared to frameworks.
+
+
+What is CDN? Why we use it ? 
+
+Stands for Content Delivery Network.Basically it is a network of geographically dispersed severs.Main idea behind CDN is like if a user is trying to access a site so the data should be provided from the nearest server rather than the original server , it will save time and improve user experience.It is an optimization technique and allow to reduce load or traffic on a single server.
+
+Why is React known as React ? 
+
+So basically React was created by Facebook , and in facebook its a kind of app that always has a changing data . So react is a view in MVC and it should change or react
+whenever user tries to interact with the app, user events and like that so its known as react.
+
+What is CrossOrigin in script tag ? 
+
+So basically crossorigin request is a request from a cross orogin url means from a different url(not the original url).So it depends on us if we want to share the user credentials with the cross origin or not so when you write cross origin as anonymous so no data shared else use credentials it will share the data.
+
+What is the difference between React and React Dom?
+
+React developers thought of splitting both the React library which deals with creating components , beautiful interface , from React Dom whose main function is just to put all the content to browser DOM . So ReactDom binds the React to Browser , but that is not true like we can even use in mobile devices which React Native so there instead of ReactDom we use something else ,So the split is in a way better.
+
+What is difference between react.development.js and react.production.js files via CDN?
+
+In production we have minified version of the files because in production means the most and minified version will take less time and enhance performance whereas in development its not that much needed.
+
+What is async and defer?
+
+These are the tags that can be used in Script , So in async the script is fetched asynchronously and when they are available they are executed by stoping HTML parsing at that time , but in defer the the script is fetched parallely as well but it will execute only once HTML will stop parsing.Use defer in most cases.
+ 
