@@ -69,3 +69,28 @@ You can install them npm i -D <package-name>
 And they will be added under dev-dependencies inside pacakge.json
 Eg of dependencies would be react redux, and dev dependencies would be testing tools like enzyme , mocha
 
+List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+
+Parcel is one of the bundler whose main job is to bundle or minify the js files into single assets file so that it can be served onto the browser.
+It also perform image optimization
+Hot module replacement ia also one of the feature where it replaces the module during the run time on the screen , and not fully refreshes the page, it helps in retaining the state.
+Tree Shaking ia also one of the feature - which remove dead code from the minified files, and make our minified file more optimized
+Zero configuration is required to add in your project
+
+What is Tree Shaking?
+
+So tree shaking is basically the removal of dead code from our minified files by our bundlers.Suppose we import a whole package in our code but we require a very specific part of package in our code, so when its minified then the extra code will also be adde which is not really required.So our bundlers are smart enough that they remove the extra code that is really not required.Hence making our minified file more optimized.
+
+What is Hot Module Replacement?
+
+Hot Module Replacement is also one of the feature of bundlers.Like module is replaced during run time , and not the full refresh is done.Because of this state of application is reserved and make developer experience a bit easy.
+
+What is `.gitignore`? What should we add and not add into it?
+
+The files that are present in the git ignore are completely ignored by git.And we should put only those files there that can be auto generated like node modules , dist files 
+
+What is the difference between `package.json` and `package-lock.json`?
+
+Package.json file contains metadata regarding the project.It usually contains project description , license information and dependencies along with its versions.
+Whereas Package.lock.json https://medium.com/helpshift-engineering/package-lock-json-the-complete-guide-2ae40175ebdd
+
