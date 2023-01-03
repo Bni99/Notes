@@ -36,4 +36,36 @@ In production we have minified version of the files because in production means 
 What is async and defer?
 
 These are the tags that can be used in Script , So in async the script is fetched asynchronously and when they are available they are executed by stoping HTML parsing at that time , but in defer the the script is fetched parallely as well but it will execute only once HTML will stop parsing.Use defer in most cases.
- 
+
+What is Npm ?
+
+Npm is a package manager.When you install Node js in your system npm comes along with it .You can download various packages with the help of npm that can be used in your project as dependency.
+Eg npm install <package-name>
+or npm install <package-name>@version
+These packages, some details are entered into package.json like they will come as dependency with their version , and in package lock it will lock the exact dependency
+version and their subsequent dependency versions .And the package code is extracted in node modules , that can be used in your code according to your need in your app.
+
+What is parcel/Webpack ? Why do you need it ? 
+
+So basically these are bundlers . Their main job is to bundle, minify various js files and their dependencies into a static asset(js file) so that it can be served on the browser.As we can not ship so many js files in production , as it will make our user experience really bad , so bundlers simply try to minify our js in the smallest amount possible to enhance user experience. 
+
+What is npx ? 
+
+Npx simply means executing a package without downloading it. When we use npm first we need to install a package and then we need to run it .
+like 
+npm i <package-name>
+npm run <package-name>
+but with npx we just have to 
+npx <package-name>
+and it will get executed , So Npx is better when we have to use a package just one or 2 times in your project.After version 5.2 Npx comes bundled with Npm.
+
+What is dependencies and dev dependencies ?
+
+So basically dependency means a package that your project uses ,There are a very few projects that do not need any packages from outside.
+So we can easily install dependencies using npm i <package-name>
+It will be added under dependency inside package.json file.It will be available in run time aswell.
+Whereas Dev Dependency are only available during development environment.
+You can install them npm i -D <package-name>
+And they will be added under dev-dependencies inside pacakge.json
+Eg of dependencies would be react redux, and dev dependencies would be testing tools like enzyme , mocha
+
