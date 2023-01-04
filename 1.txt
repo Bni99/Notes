@@ -92,5 +92,26 @@ The files that are present in the git ignore are completely ignored by git.And w
 What is the difference between `package.json` and `package-lock.json`?
 
 Package.json file contains metadata regarding the project.It usually contains project description , license information and dependencies along with its versions.
-Whereas Package.lock.json https://medium.com/helpshift-engineering/package-lock-json-the-complete-guide-2ae40175ebdd
+But the thing is like in package.json the versions are stored like ^ or ~ which is actually a version range. So suppose if another developer tries to clone our repository and we just have package.json it will not create the exact node modules structure, which might not desirable. So we have package.lock.json file which locks the dependency version and its subdependencies versions and so on.So now whenever we do npm install it will look at package.lock.json and create the same node module tree.
 
+Why should I not modify `package-lock.json`?
+
+We should not modify our package.lock.json file .Because its not meant to be edited from our end .Its main purpose is to lock the dependency tree, hence we should not modify it from our end.
+
+ What is `node_modules` ? Is it a good idea to push that on git?
+ 
+ Basically node modules is the encapsulated pieces of code that communicates with the external application based on the app requirement.So whenever we install any package the code will be stored in node modules package, and we can use that in our code using imports.We should not push node modules to git because they are very large in size and already package.json and package.lock.json have enough information to regenerate .So put it in git ignore.
+ 
+ What is the `dist` folder?
+ 
+ Dist folder contains the minified version of the source code.This is the code that will be used in production.
+ 
+ What is `browserlists`?
+ 
+ Its a configuration that we add in our package.json to tell what our target browsers should be. Like we add Last 2 vrsions so it will target last 2 versions of all the browsers available.
+ 
+ Difference between Caret and tilde in package.json?
+ 
+ So in package.json we see version either having caret or tilde in the start . So basicall caret means that the package can have its patch and minor version upgraded whereas tilde means just the patch versions can be upgraded.
+ 
+ 
