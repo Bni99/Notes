@@ -134,6 +134,21 @@ So the reason Keys are important is like suppose we have
 React will not understand that Mouse is inserted new and whole this will be created from scratch and that will be q uite inefficient.So we can add key to them which will make the react understand oh this mouse is added so let me not touch Car and ball and just create Mouse and put it . So it enhances the performance.
 Keys should be stable deterministic and unique among its sibling , Donot use random to generate the keys or using index.
 
+What is JSX?
+
+So basically creating element using react.createElement is a bit mess as the code grows . So JSX was developed by facebook developers , which allows you to write HTML like syntax inside Javascript.JSX is just a syntactical sugar , which make writing elements easier for the developer, whereas behind the scenes Babel converts the JSX to React.createElement and that returns an object and that is converted to HTML elements that is put up in the DOM.It was also built with the thought like why not put both the javascript and HTMl at the same place.
+
+
+What are the advantages of JSX?
+
+More Developer Friendly, its easier to use.
+Its a syntactical sugar , provides more readability.
+Easier to maintain.
+
+What is Babel ? 
+
+Babel is a javascript transcomppiler. So basically transpilation means converting a code to the same level of abstraction code, Eg converting js to ts and like wise . So basically babels main work is to convert our modern javascript into the javascript that our browser can understand, It also converts our JSX to React.createElement.
+Its open source.
 
 
 
