@@ -114,4 +114,28 @@ We should not modify our package.lock.json file .Because its not meant to be edi
  
  So in package.json we see version either having caret or tilde in the start . So basicall caret means that the package can have its patch and minor version upgraded whereas tilde means just the patch versions can be upgraded.
  
+ What is Reconcilation and Diffing algorithm ? Why we should add Keys in our react children ? 
+ 
+So basically react creat different dom trees on every render function.And we have one virtual Dom and one Real Dom , react whenever there is some change first of all it changes the virtual Dom. Then it compares the real DOM and virtual DOM to see where are the changes and then update , this process is known as reconcilation.The old algorithms take around o(n3) which is very expensive .So now an algorithm that is diffing algorithm that is used to compare the trees its based on two assumption:
+1) That if the root node is different it will definetly produce different roots
+2)Developers can themselves indicate which react children can be stable during renders using keys
+So now suppose diffing algorithm starts checking the root node, Now if that is only different so why to check children it will produce different dom trees. So react creates a new Dom tree from that root and children.If the Dom nodes are same , then it will check attribute and if there is any change it will change that.
+So the reason Keys are important is like suppose we have 
+<ul>
+<li>Car</li>
+<li>Ball<li/>
+</ul>
+------------
+<ul>
+<li>Mouse</li>
+<li>Car</li>
+<li>Ball<li/>
+</ul>
+React will not understand that Mouse is inserted new and whole this will be created from scratch and that will be q uite inefficient.So we can add key to them which will make the react understand oh this mouse is added so let me not touch Car and ball and just create Mouse and put it . So it enhances the performance.
+Keys should be stable deterministic and unique among its sibling , Donot use random to generate the keys or using index.
+
+
+
+
+ 
  
