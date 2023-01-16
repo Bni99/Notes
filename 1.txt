@@ -181,5 +181,42 @@ Is JSX , ES6 , Typescript mandatory ?
 
 No
 
- 
+Why JSX should have only one parent ?
+
+So suppose we have a functional component and we are trying to return multiple parent JSX from it .
+Eg 
+const A = ()=>{
+return(
+<h1>hey</h1>
+<h2>Hello</h2>
+)
+}
+so basically this means that we are trying to return 2 values from a function , which is not possible, hence we should wrap inside a parent div or React Fragment.
+
+What is React Fragment ? 
+
+So as we know that JSX should only have one parent , so in order to do that we can either wrap the child elements in a single wrapper element like div span , but this will add a extra node to the Dom which is not required always , So React Fragment comes in that place , this will not add that extra div or elemnt to the DOM.
+<React.Fragment> or <></>
+Its just a component exported by react.
+
+How can we add Css to our React ?
+
+First way is inline styling .You can style like  
+<div style={{
+border:'1px solid black',
+width:'1px'
+}}>
+</div>
+Second way is using external css files:
+<div className="abc"></div>
+and inside css file style like .abc{}
+Third way is css modules , so css modules ensure that ther should never be a ovelap of classes
+so we import it like 
+import style from "/path name"
+and style like <div className={style.abc}></div>
+and in css file save it like abc.module.css
+
+What is config driven UI ?
+
+So basically it means that our Ui is driven by a config file that is sent by backend via api.
  
