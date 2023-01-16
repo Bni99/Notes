@@ -150,7 +150,36 @@ What is Babel ?
 Babel is a javascript transcomppiler. So basically transpilation means converting a code to the same level of abstraction code, Eg converting js to ts and like wise . So basically babels main work is to convert our modern javascript into the javascript that our browser can understand, It also converts our JSX to React.createElement.
 Its open source.
 
+What is type attribute in script tag ?What can be used there ?
 
+So the type attribute in script tag defines the type of script present.It can have foolowing values:
+
+If its empty , not defined and some MIME type like 'text/javascript' , then you should avoid adding that in your code.
+Other attribute that can be added is "module". So this allows to export import the modules in code.Modules are seperate javascript, reusable code.
+Other attribute that can be added is "importmap".So this allows developer how they can specify how browser resolve module specifiers.
+
+Difference between react functional component and react element?
+
+So basically react functional component is just a function that returns some jsx , where as react element is a normal variable.
+React component =>
+const A = ()=>{return <h1>Hi</h1>}
+and how you call that <A/> or {A()}
+React Element =>
+const b = {return <h1>Hey</h1>}
+and how you use that is {b}
+
+How to write comment in React ?
+
+{//hello } 
+or 
+{/**
+hi
+*/
+}
+
+Is JSX , ES6 , Typescript mandatory ?
+
+No
 
  
  
