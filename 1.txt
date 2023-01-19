@@ -132,7 +132,7 @@ So the reason Keys are important is like suppose we have
 <li>Ball<li/>
 </ul>
 React will not understand that Mouse is inserted new and whole this will be created from scratch and that will be q uite inefficient.So we can add key to them which will make the react understand oh this mouse is added so let me not touch Car and ball and just create Mouse and put it . So it enhances the performance.
-Keys should be stable deterministic and unique among its sibling , Donot use random to generate the keys or using index.
+Keys should be stable deterministic and unique among its sibling , Donot use random to generate the keys or using index.so basically when you use index as a key and suppose you add something in starting of your arrya or something so consecutively the ids will be changed and then it has to render everything again.
 
 What is JSX?
 
