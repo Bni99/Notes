@@ -220,3 +220,6 @@ What is config driven UI ?
 
 So basically it means that our Ui is driven by a config file that is sent by backend via api.
  
+What is virtual Dom ? 
+
+So as we know that manipulating Dom is quite expensive . So react has a virtual Dom which is a representation of the actual Dom, but in memory . So whenever there is any update , a new virtual dom will be created instantly , at any given point we will have 2 virtual Doms , one Dom before the update and one after the update . Then these two doms are diffed , compared to identify the nodes that have changed and then that is updated on real DOM.Virtual Dom can not update the ui directly , hence updating virtual dom is way faster . Hence virtual dom makes react very efficient and the updates are also done in batches which prevent from uneccessary updating of DOM.
