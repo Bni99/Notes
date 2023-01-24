@@ -263,7 +263,8 @@ and use inside like {props.value}
 }
 
 What is difference between props and state ?
-Props are used to pass data from parent to child component.These are read only and they can work with class
+
+Props are used to pass data from parent to child component.These are read only and they can work with class components as well as functional components.whereas state is used to manage data/info about the component. These are editable and can be used in both class and functional components.
 
 What are react hooks?
 
@@ -272,4 +273,7 @@ React hooks are nothing just simple javascript functions which has some specific
 they can only be called inside react functional components or custom hooks
 they have to be called at the top level of a component  not inside loops or blocks.
 
+Why do we need useState hook ?
 
+we need useState hook to create state variable in functional components.It returns a state variable and a function to update the state variable .
+const [abc, setAbc]= useState()
