@@ -227,3 +227,49 @@ So as we know that manipulating Dom is quite expensive . So react has a virtual 
 What is shadow Dom ? 
 
 So shadow Dom basically deals with encapsulation. Its not an actual representation of the actual Dom . But it creates small pieces of Dom object that has their own isolated scope and it also helps in css scoping.shadow dom and virtual dom are two diffrerent concepts.
+
+What is the difference between named , default import /export?
+
+So basically there are 2 ways to import or export modules.First way is Default export
+you can export like export default ABC;
+and you import it like import ABC from '/path'
+but you can have any name here like import xyz from '/path'
+but the common convention is to write the same name , also one component can only have one default export.
+
+Named Export/Import
+So named export is export ABC; or if we have multiple exports we can do like export {abc, xyz}; and in import
+import {abc,xyz} from '/path'
+but you have to have same name of both import nd export.we can have any number of named export in the module.
+
+Some benefits of named imports and exports is it forces you to write the same name and hence removes ambiguity also we can import certain parts of the module that is needed not the full bloated module(tree shaking).
+
+What is the significance of config.js / constants.js file ?
+
+So in this file we write hardcoded values. It is a single place where we write these values and then this can be exported according to our need to the components that we need.
+
+What is state?
+
+State is used to store local variable/data about the component.Whenever the state changes the component re renders .In functional component we use useState hook to create state variables.
+
+What are props ?
+
+Props stands for properties. It is used to pass the data from parent to child component .Props are immutable and cannot be edited by child components.
+Suppose we have a child component header inside main app layout 
+<Header value="hi">
+So we pass the props like this , like we add attributes to html elements and we receive them as 
+
+function Header(props){
+and use inside like {props.value}
+}
+
+What is difference between props and state ?
+Props are used to pass data from parent to child component.These are read only and they can work with class
+
+What are react hooks?
+
+React hooks are nothing just simple javascript functions which has some specific function that is involved with it .It was introduced in react 16.8 .before that if you wanted to create state variables you have to convert functional component to class based components.But now with the introduction of the hooks we can use react state, lifecycle feature inside functional component.
+2 rules of Hooks: 
+they can only be called inside react functional components or custom hooks
+they have to be called at the top level of a component  not inside loops or blocks.
+
+
