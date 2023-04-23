@@ -10,7 +10,6 @@ obj.name="akriti"
 3:using Object.create if you already have an object and you want to set it as prototype to another object
 let obj = {
 name:'akriti'}
-
 let obj1= Object.create(obj)
 
 4.Using Object.assign , if you want to create an object after merging one or more than one object
@@ -32,9 +31,7 @@ class Person {
     this.lastName = lname;
   }
 }
-
 const person = new Person('testFirstName', 'testLastName');
-
 console.log(person.firstName); // testFirstName
 console.log(person.lastName); // testLastName
 
@@ -42,16 +39,13 @@ console.log(person.lastName); // testLastName
 
 
 Object.assign method:
-
 So basically in order to join two or more objects its used 
 suppose we have 
 let obj1={name:"akriti"}
 let obj2={age:22}
-
 let res = Object.assign(obj1,obj2)
 so it will return the target object means obj1 will be changed as {name:'akriti',age:22}
 and in res it will also get target object.
-
 Now if both the objects have the same property so the object that is in last will have the value in target
 like if 
 let a={a:1}
@@ -59,14 +53,12 @@ let b ={a:2}
 let c={a:3}
 Object.assign(a,b,c)
 console.log(a)//a will be 3
-
 It can also be used to make a copy of the object
 let copy = Object.assign({},a)
 but it cant be used for deep cloning
 
 
 Object.create method: 
-
 It is used to create a new object using another object as its prototype.
 let obj1= {name:"anki"}
 let obj2 = Object.create(obj1,//optional parameter to pass other values to new object)in this case it return empty object
@@ -77,29 +69,24 @@ obj2.age = 20
 
 
 Object.entries method :
-
 So basically object.entries will return an array of key value pairs of an object.
 Suppose we have let obj = {
 name:"akriti",
 age:23}
-
 let val = Object.entries(obj)
 //[ [ 'name', 'akriti' ], [ 'age', 20 ] ]
 It is used to loop through objects easily in for of loop 
-
 for(let [key,val] of Object.entries(obj)){
 console.log(key,val)}
 
 
 Object.freeze method : 
-
 So this method basically freezes an object , what it means is you cannot add any new property , cannot change existing property , cannot delete existing property, 
 cannot change prototype and cannot change descriptors.
 Also there is one method named as Object.isFrozen it will return true if the object is frozed .
 
 
 Object.seal method : 
-
 So this method basically seal the object so only difference between freeze and seal is the existing properties can be edited.
 like if we have let obj = {
 name:'akriti'}
@@ -108,7 +95,6 @@ Object.isSealed if the object is sealed.
 
 
 Object.fromEntries method:
-
 This actually converts a list a key value pairs to an object 
 like suppose we have a map
 let val = new Map()
@@ -122,15 +108,38 @@ const arr = [
 ];
 so there has to be a key value pair
 
-Object.getPrototypeOf method :
 
+Object.getPrototypeOf method :
 So basically it works like Object.getPrototypeOf(object that you want to know prototype of)
 and its similar as objectname.__proto__
 
-Object.setPrototypeOf method : 
 
+Object.setPrototypeOf method : 
 It lets us set the prototype of an object .It works like Object.setPrototypeOf(obj, prototype)
 similar to obj.__proto__ = prototypeObj
 
-Object.hasOwn method : Object.hasOwn(objectName, propertyname)//true if exists
 
+Object.hasOwn method : 
+Object.hasOwn(objectName, propertyname)//true if exists
+
+
+Shallow Copy and deep Copy of an object: 
+now when we try to copy an object in js simply like 
+let obj = {name:'akriti'}
+and we do like this -> let newObj = obj
+but we expect if we make the changes to the new object properties it should not change the original one but actually in this case memory location gets copied
+and if we do newObj.name="shilpa"
+so obj.name will also be shilpa 
+So in order to overcome this 
+Shallow copy :In this case the copy is made to the first level means if you change something in first level of new Object it wont change the original Object
+--------------
+2 ways to do shallow copy : 
+using let newObj={...obj}
+and other is let newObj = Object.assign({},obj)
+Deep Copy : Whereas deep copy means the new values that are copied are totally detached from the original variable at any level
+----------
+2 ways to do deep copy 
+let newObj = JSON.parse(JSON.stringify(obj))
+only pitfall is if there is function inside it it will not get copied
+Other way is using Lodash
+_.cloneDeep
