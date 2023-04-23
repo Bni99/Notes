@@ -46,3 +46,48 @@ It is used to loop through objects easily in for of loop
 
 for(let [key,val] of Object.entries(obj)){
 console.log(key,val)}
+
+
+Object.freeze method : 
+
+So this method basically freezes an object , what it means is you cannot add any new property , cannot change existing property , cannot delete existing property, 
+cannot change prototype and cannot change descriptors.
+Also there is one method named as Object.isFrozen it will return true if the object is frozed .
+
+
+Object.seal method : 
+
+So this method basically seal the object so only difference between freeze and seal is the existing properties can be edited.
+like if we have let obj = {
+name:'akriti'}
+obj.name='anki'//its allowed
+Object.isSealed if the object is sealed.
+
+
+Object.fromEntries method:
+
+This actually converts a list a key value pairs to an object 
+like suppose we have a map
+let val = new Map()
+val.set("age",20)
+Object.fromEntries(val) //{age:20}
+it can also work for an array if its like 
+const arr = [
+  ["0", "a"],
+  ["1", "b"],
+  ["2", "c"],
+];
+so there has to be a key value pair
+
+Object.getPrototypeOf method :
+
+So basically it works like Object.getPrototypeOf(object that you want to know prototype of)
+and its similar as objectname.__proto__
+
+Object.setPrototypeOf method : 
+
+It lets us set the prototype of an object .It works like Object.setPrototypeOf(obj, prototype)
+similar to obj.__proto__ = prototypeObj
+
+Object.hasOwn method : Object.hasOwn(objectName, propertyname)//true if exists
+
