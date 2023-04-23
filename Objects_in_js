@@ -1,3 +1,46 @@
+Some ways to create object 
+
+1:using object Literal 
+let obj={name:'akriti'}
+
+2:using new Object constructor function
+const obj = new Object()//not recommended anymore
+obj.name="akriti"
+
+3:using Object.create if you already have an object and you want to set it as prototype to another object
+let obj = {
+name:'akriti'}
+
+let obj1= Object.create(obj)
+
+4.Using Object.assign , if you want to create an object after merging one or more than one object
+Object.assign({},obj)
+
+5:Using constructor function 
+they are just normal function , but they are just called with new
+function Person(fname, lname) {
+  this.firstName = fname;
+  this.lastName = lname;
+}
+const personOne = new Person('testFirstNameOne', 'testLastNameOne');
+const personTwo = new Person('testFirstNameTwo', 'testLastNameTwo');
+
+6:Using ES6 classes
+class Person {
+  constructor(fname, lname) {
+    this.firstName = fname;
+    this.lastName = lname;
+  }
+}
+
+const person = new Person('testFirstName', 'testLastName');
+
+console.log(person.firstName); // testFirstName
+console.log(person.lastName); // testLastName
+
+
+
+
 Object.assign method:
 
 So basically in order to join two or more objects its used 
