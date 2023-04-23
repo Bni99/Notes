@@ -1,0 +1,48 @@
+Object.assign method:
+
+So basically in order to join two or more objects its used 
+suppose we have 
+let obj1={name:"akriti"}
+let obj2={age:22}
+
+let res = Object.assign(obj1,obj2)
+so it will return the target object means obj1 will be changed as {name:'akriti',age:22}
+and in res it will also get target object.
+
+Now if both the objects have the same property so the object that is in last will have the value in target
+like if 
+let a={a:1}
+let b ={a:2}
+let c={a:3}
+Object.assign(a,b,c)
+console.log(a)//a will be 3
+
+It can also be used to make a copy of the object
+let copy = Object.assign({},a)
+but it cant be used for deep cloning
+
+
+Object.create method: 
+
+It is used to create a new object using another object as its prototype.
+let obj1= {name:"anki"}
+let obj2 = Object.create(obj1,//optional parameter to pass other values to new object)in this case it return empty object
+console.log(obj2.name)//so it will have access to it because obj2 will be its prototype
+also obj2.__proto__ === obj1;
+but generally do it like this 
+obj2.age = 20 
+
+
+Object.entries method :
+
+So basically object.entries will return an array of key value pairs of an object.
+Suppose we have let obj = {
+name:"akriti",
+age:23}
+
+let val = Object.entries(obj)
+//[ [ 'name', 'akriti' ], [ 'age', 20 ] ]
+It is used to loop through objects easily in for of loop 
+
+for(let [key,val] of Object.entries(obj)){
+console.log(key,val)}
