@@ -188,3 +188,27 @@ Function.prototype.customCall = customCall;
 
 detail.customCall(obj,"agra",27)
 
+------------------------------------------------------------------------------------------------------------------------
+
+Apply method :
+
+let obj = {
+    name:'akriti'
+}
+
+function detail(place,age){
+    console.log(this.name+""+age+""+place )
+}
+
+const customApply = function(obj=globalThis,args){
+ let key = Math.random();
+ if(obj[key] !== undefined)key = Math.random()
+ else obj[key]= this;
+ let res = obj[key](...args)
+ delete obj[key]
+ return res
+}
+
+Function.prototype.customApply = customApply;
+
+detail.customApply(obj,["agra",27])
