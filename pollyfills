@@ -141,3 +141,23 @@ const customReduce = function(callback,initialValue){
 Array.prototype.customReduce= customReduce;
 let val = [1,2,3,4,5,6].customReduce((prev,elem,i,arr)=>{return prev+elem})
 console.log(val)
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+Find method : 
+
+const customFind = function(callback){
+    let res;
+    for(let i=0;i<this.length;i++){
+        if(callback(this[i],i,this)){
+            res = this[i]
+            break;
+        }
+    }
+    return res;
+}
+
+Array.prototype.customFind = customFind;
+
+console.log([1,2,3,4,5,6].customFind((elem, i ,arr)=>{return elem>20}))
