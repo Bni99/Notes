@@ -97,3 +97,47 @@ Array.prototype.customMap= customMap;
 const arr =[1,2,3,4,6]
 let val = arr.customMap((elem,i,arr)=>{return elem+i})
 console.log(val)
+
+
+--------------------------------------------------------------------------------------------------------------
+
+Filter method : 
+
+function customFilter (callback){
+    let res = []
+  for(let i=0;i<this.length;i++){
+      if(callback(this[i],i,this))
+      res.push(this[i])
+  }
+  return res;
+}
+
+Array.prototype.customFilter = customFilter;
+
+let val = [1,2,3,5,6].customFilter((elem,i,arr)=>{
+    return elem >10
+})
+
+console.log(val)
+
+----------------------------------------------------------------------------------------------------------------
+
+
+Reduce method : 
+
+const customReduce = function(callback,initialValue){
+    let val ;
+    if(initialValue !== undefined){
+        val=initialValue }
+        else{
+            val = this[0]
+        }
+        for(let i=initialValue!== undefined?0:1;i<this.length;i++){
+            val = callback(val,this[i],i,this)
+        }
+        return val;
+    
+}
+Array.prototype.customReduce= customReduce;
+let val = [1,2,3,4,5,6].customReduce((prev,elem,i,arr)=>{return prev+elem})
+console.log(val)
