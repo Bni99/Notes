@@ -161,3 +161,30 @@ const customFind = function(callback){
 Array.prototype.customFind = customFind;
 
 console.log([1,2,3,4,5,6].customFind((elem, i ,arr)=>{return elem>20}))
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+Call method : 
+
+let obj = {
+    name:'akriti'
+}
+
+function detail(place,age){
+    console.log(this.name+""+age+""+place )
+}
+
+const customCall = function(obj=globalThis,...args){
+    let key = Math.random()
+    if(obj[key] !== undefined) key = Math.random();
+    else obj[key]= this;
+    let res = obj[key](...args)
+    delete obj[key];
+    return res;
+}
+
+Function.prototype.customCall = customCall;
+
+detail.customCall(obj,"agra",27)
+
