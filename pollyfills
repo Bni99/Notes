@@ -79,3 +79,21 @@ function customAt (i){
 Array.prototype.customAt = customAt;
 let val = [1,2,3,4,5].customAt(-2)
 console.log(val)
+
+------------------------------------------------------------------------------------------------------------
+
+Map method : 
+
+function customMap (callback){
+    let res = [];
+    let val;
+    for(let i=0;i<this.length;i++){
+        val = callback(this[i],i,this)
+        res.push(val)
+    }
+    return res;
+    }
+Array.prototype.customMap= customMap;
+const arr =[1,2,3,4,6]
+let val = arr.customMap((elem,i,arr)=>{return elem+i})
+console.log(val)
