@@ -212,3 +212,34 @@ const customApply = function(obj=globalThis,args){
 Function.prototype.customApply = customApply;
 
 detail.customApply(obj,["agra",27])
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Bind Method:
+
+let obj = {
+    name:'akriti'
+}
+
+function detail (age,place){
+    return this.name+age+place
+}
+
+function customBind(obj=globalThis,...args){
+    let key = Math.random();
+    if(obj[key] !== undefined) key = Math.random()
+    else obj[key]= this;
+    
+    return function(...newArgs){
+       return obj[key](...args,...newArgs)
+    }
+    
+}
+
+Function.prototype.customBind = customBind;
+
+
+let fnc = detail.customBind(obj,20,"mumbai")
+console.log(fnc())
+
+
